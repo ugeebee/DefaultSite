@@ -3,57 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome</title>
-    <link rel="stylesheet" href="../static/css/login.css">
+    <title>Login & Signup</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container auth-box" id="auth-container">
-        <div class="form-content login-form">
-            <h1>Login</h1>
-            <form action="/login" method="POST">
-                <div class="input-group">
-                    <label>Username</label>
-                    <input type="text" name="username" required>
-                </div>
-                <div class="input-group">
-                    <label>Password</label>
-                    <input type="password" name="password" required>
-                </div>
-                <button type="submit" class="btn">Sign In</button>
-            </form>
-            <div class="footer-prompt">
-                <p>New here? <a href="#" onclick="toggleAuth()">Create an account</a></p>
-                <a href="/" class="back-link">← Back to Home</a>
-            </div>
+    <div class="auth-container">
+        <div class="form-toggle">
+            <button id="loginBtn" class="active">Login</button>
+            <button id="signupBtn">Signup</button>
         </div>
 
-        <div class="form-content signup-form">
-            <h1>Sign Up</h1>
-            <form action="/signup" method="POST">
-                <div class="input-group">
-                    <label>Username</label>
-                    <input type="text" name="username" required>
-                </div>
-                <div class="input-group">
-                    <label>Email</label>
-                    <input type="email" name="email" required>
-                </div>
-                <div class="input-group">
-                    <label>Password</label>
-                    <input type="password" name="password" required>
-                </div>
-                <button type="submit" class="btn">Register</button>
-            </form>
-            <div class="footer-prompt">
-                <p>Already have an account? <a href="#" onclick="toggleAuth()">Login instead</a></p>
-            </div>
-        </div>
+        <form id="loginForm" class="auth-form">
+            <h2>Welcome Back</h2>
+            <input type="email" placeholder="Email" required>
+            <input type="password" placeholder="Password" required>
+            <button type="submit" class="submit-btn">Login</button>
+            <p><a href="#">Forgot password?</a></p>
+        </form>
+
+        <form id="signupForm" class="auth-form hidden">
+            <h2>Create Account</h2>
+            <input type="text" placeholder="Full Name" required>
+            <input type="email" placeholder="Email" required>
+            <input type="password" placeholder="Password" required>
+            <button type="submit" class="submit-btn">Sign Up</button>
+        </form>
     </div>
-
-    <script>
-        function toggleAuth() {
-            document.getElementById('auth-container').classList.toggle('show-signup');
-        }
-    </script>
+    <script src="index.js"></script>
 </body>
 </html>
